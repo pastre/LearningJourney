@@ -78,7 +78,7 @@ struct LearningGoalCard_Previews: PreviewProvider {
     }
     
     final class DummyViewModel: LibraryViewModelProtocol {
-        var strands: LibraryViewModelState<[LearningStrand]> = .result([
+        var strands1: LibraryViewModelState<[LearningStrand]> = .result([
             .fixture(goals: [
                 .fixture(name: UUID().uuidString),
                 .fixture(name: UUID().uuidString),
@@ -120,6 +120,12 @@ struct LearningGoalCard_Previews: PreviewProvider {
                 .fixture(name: UUID().uuidString),
             ]),
         ])
+        var strands: LibraryViewModelState<[LearningStrand]> = .result(.init(
+            repeating: .fixture(goals: .init(
+                repeating: .fixture(),
+                count: 10)),
+            count: 10
+        ))
         
         var searchQuery: String = ""
         

@@ -10,6 +10,10 @@ def firebase_pods
     pod 'Firebase/Analytics'
 end
 
+def test_pods
+  pod 'SnapshotTesting'
+end
+
 # App target
 target 'LearningJourney' do
     project 'App/LearningJourney.project'
@@ -111,6 +115,8 @@ end
 
 target 'TestingUtils' do
     project 'Modules/Core/TestingUtils/TestingUtils.project'
+
+    test_pods
 end
 
 target 'UI' do
